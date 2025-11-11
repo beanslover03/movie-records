@@ -2,7 +2,6 @@ import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MovieEditor } from "../src/components/MovieEditor";
 import type { Movie } from "../src/interfaces/movie";
-import { Container } from "react-bootstrap";
 
 describe("MovieEditor Component", () => {
     const mockChangeEditing = jest.fn();
@@ -252,8 +251,8 @@ describe("MovieEditor Component", () => {
         );
 
         const deleteButton = screen.getByRole("button", { name: /delete/i });
-        const saveButton = screen.getByRole("button", {name: /save/i});
-        const cancelButton = screen.getByRole("button", {name: /Cancel/i})
+        const saveButton = screen.getByRole("button", { name: /save/i });
+        const cancelButton = screen.getByRole("button", { name: /Cancel/i });
 
         expect(deleteButton).toHaveTextContent("Delete");
         expect(saveButton).toHaveContext("Save");
